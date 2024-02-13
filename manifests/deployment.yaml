@@ -19,4 +19,4 @@ spec:
         - name: js-hello-test
           image: akstest2.azurecr.io/js-hello-test-image-workflow:latest
           ports:
-            - containerPort: 3000
+            - containerPort: 8080
