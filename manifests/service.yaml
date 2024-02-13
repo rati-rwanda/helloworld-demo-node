@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: js-hello-test
+  namespace: aks-test-app-namespace
+spec:
+  type: LoadBalancer
+  selector:
+    app: js-hello-test
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
