@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: js-hello-test
+  labels:
+    app: js-hello-test
+  namespace: aks-test-app-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: js-hello-test
+  template:
+    metadata:
+      labels:
+        app: js-hello-test
+    spec:
+      containers:
+        - name: js-hello-test
+          image: akstest2.azurecr.io/js-hello-test-image-workflow:latest
+          ports:
+            - containerPort: 3000
